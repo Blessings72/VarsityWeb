@@ -1,10 +1,10 @@
 {
     "files.exclude": {
         "**/*vercel*": true,
-        "**/package.json": true,
+        //"**/package.json": true,
         "**/node_modules": true,
         "**/coverage": true,
-        "**/README.md": true,
+        //"**/README.md": true,
         "**/.git*": true,
         
         "**/dist": true,
@@ -15,7 +15,7 @@
 
         
         "**/src/theme": true,
-        "**codegen**": true,
+        //"**codegen**": true,
      },
     "editor.codeActionsOnSave": {
         "source.organizeImports": "always"
