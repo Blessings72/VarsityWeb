@@ -2,6 +2,7 @@ import { useAuth } from "@clerk/clerk-react";
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { MainLayout } from "./components";
 import { NotFoundPage, SignInPage } from "./pages";
+import Dashboard from "./pages/dashboard";
 
 
 const App: React.FC = () => {
@@ -16,6 +17,7 @@ const App: React.FC = () => {
       <Routes>
         {isSignedIn && (
           <Route element={<MainLayout><Outlet/></MainLayout>}>
+            <Route path="/dashboard" element={<Dashboard/>} />
           </Route>
         )}
         <Route path="/sign-in" element={<SignInPage />} />

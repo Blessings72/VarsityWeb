@@ -26,10 +26,7 @@ export const ProfileMenu: React.FC = () => {
         if (MenuItem === "Logout") {
             signOut();
         }
-        if (MenuItem === "Manage Tenants") {
-            navigate("/tenants");
-        }
-        if (MenuItem === "Manage Expenses") {
+        if (MenuItem === "Profile") {
             navigate("/dashboard");
         }
         handleMenuClose();
@@ -59,8 +56,7 @@ export const ProfileMenu: React.FC = () => {
                         </div>
                     </Box>
                 </MenuItem>
-                <MenuItem onClick={() => handleMenuClick("Manage Expenses")}>Manage Expenses</MenuItem>
-                <MenuItem onClick={() => handleMenuClick("Manage Tenants")}>Manage Tenants </MenuItem>
+                <MenuItem onClick={() => handleMenuClick("Profile")}>Profile</MenuItem>
                 <MenuItem onClick={() => handleMenuClick("Switch Theme")}>Switch Theme</MenuItem>
                 <MenuItem onClick={() => handleMenuClick("Logout")}>Logout</MenuItem>
             </Menu>

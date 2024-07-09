@@ -13,7 +13,7 @@ const Header: React.FC = () => {
                     <Avatar src="/logo192.png" alt="Logo" />
                 </IconButton>
                 <Typography variant="h6" style={{ flexGrow: 1 }}>
-                    Rental App
+                    Varsity Web
                 </Typography>
                 {isLargeScreen && (
                     <IconButton edge="end" color="inherit" aria-label="notifications" style={{marginRight: "5px", backgroundColor: "rgba(0, 0, 0, 0.1)"}}>
