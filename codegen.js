@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import fs from "fs";
 import path from "path";
 
-dotenv.config();
+dotenv.config({path: ".env.local"});
 
 const dumpOrRestore = async (action, fileName) => {
     const dumpFileName = fileName || 'backup.sql';
@@ -103,11 +103,12 @@ const generateInterfaces = () => {
     columns.forEach((columnDef) => {
       const trimmedDef = columnDef.trim().replace(/,$/, "");
       const parts = trimmedDef.split(/\s+/);
-      const columnName = parts[0];
+      const columnName = parts[0].trim();
       if(columnName === "CONSTRAINT") return;
       const columnType = mapType(parts[1]);
-      
-      const isRequired = columnDef.includes("NOT NULL") && !columnDef.includes("DEFAULT");
+  
+      let isRequired = (columnDef.includes("NOT NULL") && !columnDef.includes("DEFAULT"));
+      isRequired = columnName === "id" ? false : isRequired;
       inputInterfaceString += `    ${columnName}${
         isRequired ? "" : "?"
       }: ${columnType};\n`;
